@@ -1,0 +1,58 @@
+#logo-number {
+    margin: 2.75rem 6.8125rem;
+    margin-bottom: 2.875rem;
+}
+
+header {
+    width: 19.9375rem;
+    height: auto;
+    margin-left: 2.1875rem;
+    margin-bottom: 2.625rem;
+
+    & #intro-site {
+        & p {
+            font: var(--overline);
+            background: var(--gradient-txt-title);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+        }
+
+        margin-bottom: 0.5rem;
+    }
+
+    & #title {
+        & h1 {
+            font: var(--display-medium);
+            color: var(--content-primary);
+        }
+    }
+}
+
+main {
+
+    width: 19.9375rem;
+    height: auto;
+
+
+    & .content-form {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+
+        & #header-form {
+            & h2 {
+                font: var(--label-large);
+                color: var(--content-primary);
+            }
+
+            & p {
+                font: var(--paragraph-medium);
+                color: var(--content-tertiary);
+            }
+        }
+    }
+
+}
+

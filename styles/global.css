@@ -3,21 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
-html, body {
+
+html,
+body {
     height: 100%;
     min-height: 100vh;
 }
 
 body {
     background-image: var(--gradient-background-linear), url(../assets/images/image-background.png);
-    /* background-position:; */
-    
+
     background-color: var(--background-primary);
 }
 
 :root {
 
-    /*/////////// Colors /////////// */
+    /* /////////// Colors /////////// */
 
     /* Content */
     --content-primary: #FFFFFF;
@@ -45,5 +46,26 @@ body {
     --gradient-background: linear-gradient(90deg, #D586E0 0%, #91A1FA 98.93%);
     --gradient-content: linear-gradient(90deg, #C7C9CC 0%, #3D3D3D 100%);
     --gradient-background-linear: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 100%);
+    --gradient-txt-title: linear-gradient(90deg, var(--content-secondary) 0%,var(--background-gray) 100%);
+
+    /* Fonts */
+
+    /* Sora */
+    --display-large: 800 4.5rem/130% "Sora", sans-serif;
+    --display-medium: 800 2.5rem/130% "Sora", sans-serif;
+    --display-small: 700 2rem/130% "Sora", sans-serif;
+
+    /* Roboto Mono */
+    --overline: 700 1rem/150% "Roboto Mono", monospace;
+
+    /* Roboto Flex */
+    --paragraph-large: 500 1rem/150% "Roboto flex", sans-serif;
+    --paragraph-medium: 500 0.875rem/150% "Roboto flex", sans-serif;
+    --paragraph-small: 500 0.75rem/150% "Roboto flex", sans-serif;
+    --label-medium: 700 1.25rem/150% "Roboto flex", sans-serif;
+    --label-small: 700 1rem/150% "Roboto flex", sans-serif;
+    --label-large: 700 1.25rem/150% "Roboto flex", sans-serif;
 
 }
+
+
