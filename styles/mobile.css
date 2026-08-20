@@ -55,32 +55,114 @@ main {
 
         & .form #form-area {
 
-            & #fields-form {
+            & #toggle {
                 display: flex;
-                gap: 0.75rem;
+                align-items: center;
+                gap: 8px;
+                margin-bottom: 2.5rem;
 
-                & .input-form {
+                & .background-style {
                     display: flex;
-                    flex-direction: column;
                     align-items: center;
-                    gap: 0.5rem;
+                    padding: 4px;
+                    width: 1.875rem;
+                    height: 1.25rem;
+                    border-radius: 999px;
+                    background-color: var(--content-tertiary);
 
-                    label {
+
+                    & #checkbox-style {
+                        transition: 1.5s;
+                        width: 0.875rem;
+                        height: 0.875rem;
+                        border-radius: 100%;
+                        background-color: var(--content-primary);
+                    }
+
+                    &:has(input:checked) {
+                        background: var(--gradient-background);
+
+                        & #checkbox-style {
+                            transition: 1.5s;
+                            transform: translatex(8px);
+                        }
+                    }
+                }
+            }
+
+            & p {
+                font: var(--paragraph-small);
+                color: var(--content-primary);
+            }
+
+            & .button-style {
+
+                & button {
+                    width: 319px;
+                    height: 56px;
+
+                    border: 1.6px solid transparent;
+                    border-radius: 8px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    padding: 1rem;
+                    gap: 8px;
+
+                    /* background-color: var(--background-tertiary); */
+                    background:
+                        linear-gradient(var(--background-tertiary), var(--background-tertiary)) padding-box,
+                        var(--gradient-border) border-box;
+
+                    & p {
                         font: var(--label-medium);
-                        color: var(--content-secondary);
                     }
 
-                    input {
-                        width: 86px;
-                        height: 56px;
-                        appearance: none;
-                        border: none;
-                        border-radius: 0.5rem;
-                        text-align: center;
-                        font: var(--display-small);
-                        color: var(--content-primary);
-                        background-color: var(--background-secondary);
+                    & img {
+                        width: 24px;
+                        height: 24px;
                     }
+                }
+            }
+
+        }
+
+        & #toggle-style {
+            display: none;
+            appearance: none;
+        }
+
+
+
+        & #fields-form {
+            display: flex;
+            gap: 0.75rem;
+
+            margin-bottom: 1.25rem;
+
+            & .input-form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+
+                label {
+                    font: var(--label-medium);
+                    color: var(--content-secondary);
+                }
+
+                input {
+                    width: 86px;
+                    height: 56px;
+                    appearance: none;
+                    border: none;
+                    border-radius: 0.5rem;
+                    text-align: center;
+                    font: var(--display-small);
+                    color: var(--content-primary);
+                    background-color: var(--background-secondary);
                 }
             }
         }
