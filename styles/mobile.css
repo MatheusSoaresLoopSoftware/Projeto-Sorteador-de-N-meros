@@ -36,10 +36,11 @@ main {
     height: auto;
     margin-left: 2.1875rem;
 
-    & .content-form {
+    & .content {
         display: flex;
         flex-direction: column;
         gap: 2.5rem;
+        margin-bottom: 5rem;
 
         & #header-form {
             & h2 {
@@ -53,6 +54,10 @@ main {
             }
         }
 
+        .form{
+            display: none;
+        }
+
         & .form #form-area {
 
             & #toggle {
@@ -64,12 +69,12 @@ main {
                 & .background-style {
                     display: flex;
                     align-items: center;
+                    cursor: pointer;
                     padding: 4px;
                     width: 1.875rem;
                     height: 1.25rem;
                     border-radius: 999px;
                     background-color: var(--content-tertiary);
-
 
                     & #checkbox-style {
                         transition: 1.5s;
@@ -111,10 +116,7 @@ main {
                     padding: 1rem;
                     gap: 8px;
 
-                    /* background-color: var(--background-tertiary); */
-                    background:
-                        linear-gradient(var(--background-tertiary), var(--background-tertiary)) padding-box,
-                        var(--gradient-border) border-box;
+                    background-color: var(--background-tertiary);
 
                     & p {
                         font: var(--label-medium);
@@ -123,6 +125,19 @@ main {
                     & img {
                         width: 24px;
                         height: 24px;
+                        transition: 1.2s;
+                        transform: translatex(0px);
+                    }
+                }
+
+                :hover {
+                    background:
+                        linear-gradient(var(--background-tertiary), var(--background-tertiary)) padding-box,
+                        var(--gradient-border) border-box;
+
+                    & img {
+                        transition: 1.2s;
+                        transform: translatex(8px);
                     }
                 }
             }
@@ -157,14 +172,50 @@ main {
                     width: 86px;
                     height: 56px;
                     appearance: none;
-                    border: none;
+                    border: 1.6px solid transparent;
                     border-radius: 0.5rem;
                     text-align: center;
                     font: var(--display-small);
                     color: var(--content-primary);
                     background-color: var(--background-secondary);
                 }
+
+                :hover {
+                    background:
+                        linear-gradient(var(--background-tertiary), var(--background-tertiary)) padding-box,
+                        var(--gradient-border) border-box;
+                }
             }
         }
     }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 19.9375rem;
+    height: auto;
+    margin-left: 2.1875rem;
+    gap: 2.25rem;
+
+    & .items-footer {
+        & .explain-footer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            & span {
+                font: var(--paragraph-medium);
+                color: var(--content-brand);
+            }
+
+        }
+
+        & p {
+            font: var(--paragraph-small);
+            color: var(--content-secondary);
+            margin-left: 1.875rem
+        }
+    }
+
 }
