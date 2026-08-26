@@ -46,7 +46,7 @@ body {
     --gradient-background: linear-gradient(90deg, #D586E0 0%, #91A1FA 98.93%);
     --gradient-content: linear-gradient(90deg, #C7C9CC 0%, #3D3D3D 100%);
     --gradient-background-linear: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 100%);
-    --gradient-txt-title: linear-gradient(90deg, var(--content-secondary) 0%,var(--background-gray) 100%);
+    --gradient-txt-title: linear-gradient(90deg, var(--content-secondary) 0%, var(--background-gray) 100%);
 
     /* Fonts */
 
@@ -68,4 +68,52 @@ body {
 
 }
 
+/* Button Style */
 
+
+.button-style {
+
+    & button {
+        width: 319px;
+        height: 56px;
+
+        border: 1.6px solid transparent;
+        border-radius: 8px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 1rem;
+        gap: 8px;
+
+        background-color: var(--background-tertiary);
+
+        & .button-global {
+            font: var(--label-medium);
+            color: var(--content-primary);
+        }
+
+        & img {
+            width: 24px;
+            height: 24px;
+            transition: 1.2s;
+            transform: translatex(0px);
+        }
+    }
+
+    :hover {
+        background:
+            linear-gradient(var(--background-tertiary), var(--background-tertiary)) padding-box,
+            var(--gradient-border) border-box;
+
+        & img {
+            transition: 1.2s;
+            transform: translatex(8px);
+        }
+    }
+}
+
+.hidden{
+    display: none;
+}

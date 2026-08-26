@@ -54,11 +54,41 @@ main {
             }
         }
 
-        .form{
-            display: none;
+
+        & #form-sorter {
+            
+            & #sorter {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+
+                #header-sorter {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    & h3 {
+                        font: var(--label-large);
+                        color: var(--content-primary);
+                    }
+
+                    & p {
+                        font: var(--overline);
+                        color: var(--content-secondary);
+                    }
+                }
+
+                & .numbers-sorter{
+                    width: auto;
+                    height: 100px;
+
+                }
+            }
         }
 
         & .form #form-area {
+            /* display: none; */
 
             & #toggle {
                 display: flex;
@@ -95,12 +125,12 @@ main {
                 }
             }
 
-            & p {
+            & .paragraph-basic {
                 font: var(--paragraph-small);
                 color: var(--content-primary);
             }
 
-            & .button-style {
+            /* & .button-style {
 
                 & button {
                     width: 319px;
@@ -118,8 +148,9 @@ main {
 
                     background-color: var(--background-tertiary);
 
-                    & p {
+                    & .button-global {
                         font: var(--label-medium);
+                        color: var(--content-primary);
                     }
 
                     & img {
@@ -140,7 +171,7 @@ main {
                         transform: translatex(8px);
                     }
                 }
-            }
+            } */
 
         }
 

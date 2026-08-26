@@ -33,52 +33,69 @@
                 <h2>
                     QUERO SORTEAR:
                 </h2>
-                <p>
+                <p class="paragraph-basic">
                     Defina o intervalo e a quantidade de números,
                     clique em "Sortear" e veja os resultados na tela. É
                     rápido e fácil"
                 </p>
             </header>
 
-            <div id="sorter">
-                <header id="title-sorter">
-                    <h3>
-                        RESULTADO DO SORTEIO
-                    </h3>
-                    <p>1° RESULTADO</p>
-                </header>
-            </div>
-
             <div class="form">
+
+                <form id="form-sorter">
+                    <div id="sorter">
+                        <header id="header-sorter">
+                            <h3>
+                                RESULTADO DO SORTEIO
+                            </h3>
+                            <p>1° RESULTADO</p>
+                        </header>
+
+                        <div class="numbers-sorter">
+                            <!-- <div class="background-sorter"> -->
+                                <output name="result-sorter" class="result-sorter"></output>
+                            <!-- </div> -->
+                        </div>
+
+                        <div class="button-style">
+                            <button type="submit">
+                                <p class="button-global">SORTEAR NOVAMENTE</p>
+                                <img src="assets/icons/icon-arrowCircle.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+
                 <form id="form-area">
                     <div id="fields-form">
                         <div class="input-form">
                             <label for="qtd">Números</label>
-                            <input type="text" id="qtd" value="2">
+                            <input type="text" id="qtd" placeholder="0">
                         </div>
 
                         <div class="input-form">
                             <label for="min">De</label>
-                            <input type="text" id="min" value="1">
+                            <input type="text" id="min" placeholder="0" >
                         </div>
 
                         <div class="input-form">
                             <label for="max">Até</label>
-                            <input type="text" id="max" value="100">
+                            <input type="text" id="max" placeholder="0" >
                         </div>
                     </div>
 
                     <div id="toggle">
                         <label class="background-style">
                             <div id="checkbox-style"></div>
-                            <input type="checkbox" name="toggle-style" id="toggle-style">
+                            <input type="checkbox" name="toggle-style"  id="toggle-style">
                         </label>
-                        <p>Não repetir número</p>
+                        <p class="paragraph-basic">Não repetir número</p>
                     </div>
 
                     <div class="button-style">
                         <button type="submit">
-                            <p>SORTEAR</p>
+                            <p class="button-global">SORTEAR</p>
                             <img src="assets/icons/icon-arrow.svg" alt="">
                         </button>
                     </div>
@@ -107,6 +124,7 @@
         </div>
 
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
