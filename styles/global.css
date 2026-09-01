@@ -57,6 +57,8 @@ body {
 
     /* Roboto Mono */
     --overline: 700 1rem/150% "Roboto Mono", monospace;
+    --roboto-large: 800 64px/150% "Roboto Mono", monospace;
+    --roboto-medium: 800 48px/150% "Roboto Mono", monospace;
 
     /* Roboto Flex */
     --paragraph-large: 500 1rem/150% "Roboto flex", sans-serif;
@@ -69,8 +71,6 @@ body {
 }
 
 /* Button Style */
-
-
 .button-style {
 
     & button {
@@ -114,6 +114,6 @@ body {
     }
 }
 
-.hidden{
+.hidden {
     display: none;
 }

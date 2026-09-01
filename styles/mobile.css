@@ -56,7 +56,7 @@ main {
 
 
         & #form-sorter {
-            
+
             & #sorter {
                 display: flex;
                 flex-direction: column;
@@ -79,16 +79,42 @@ main {
                     }
                 }
 
-                & .numbers-sorter{
+                & .sorter-area {
                     width: auto;
                     height: 100px;
+                    display: flex;
+                    justify-content: center;
+                    gap: 4px;
 
+                    & .numbers-sorter {
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+
+                        & .background-sorter {
+                            width: 100px;
+                            height: 100px;
+                            background-color: var(--content-brand);
+                            border-radius: 28%;
+                            animation: 1s ease-in-out bg-fade-in, 1s linear 2s bg-rotate, 0.5s ease-out 3s bg-fade-out forwards;
+                            ;
+                        }
+
+                        & .result-sorter {
+                            position: absolute;
+                            font: var(--roboto-large);
+                            opacity: 0;
+                            animation: 0.5s linear 2s number-fade-in forwards, 0.5s linear 3s number-fade-out forwards;
+                        }
+                    }
                 }
+
             }
         }
 
         & .form #form-area {
-            /* display: none; */
 
             & #toggle {
                 display: flex;
@@ -129,58 +155,12 @@ main {
                 font: var(--paragraph-small);
                 color: var(--content-primary);
             }
-
-            /* & .button-style {
-
-                & button {
-                    width: 319px;
-                    height: 56px;
-
-                    border: 1.6px solid transparent;
-                    border-radius: 8px;
-
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    padding: 1rem;
-                    gap: 8px;
-
-                    background-color: var(--background-tertiary);
-
-                    & .button-global {
-                        font: var(--label-medium);
-                        color: var(--content-primary);
-                    }
-
-                    & img {
-                        width: 24px;
-                        height: 24px;
-                        transition: 1.2s;
-                        transform: translatex(0px);
-                    }
-                }
-
-                :hover {
-                    background:
-                        linear-gradient(var(--background-tertiary), var(--background-tertiary)) padding-box,
-                        var(--gradient-border) border-box;
-
-                    & img {
-                        transition: 1.2s;
-                        transform: translatex(8px);
-                    }
-                }
-            } */
-
         }
 
         & #toggle-style {
             display: none;
             appearance: none;
         }
-
-
 
         & #fields-form {
             display: flex;
@@ -249,4 +229,61 @@ footer {
         }
     }
 
+}
+
+@keyframes bg-fade-in {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes bg-rotate {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(0.5turn);
+    }
+}
+
+@keyframes bg-fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        width: 84px;
+        height: 100px;
+    }
+}
+
+@keyframes number-fade-in {
+    from {
+        opacity: 0;
+        color: var(--content-brand);
+    }
+
+    to {
+        opacity: 1;
+        color: var(--color-inverse);
+    }
+}
+
+@keyframes number-fade-out {
+    from {
+        color: var(--color-inverse);
+    }
+
+    to {
+        color: var(--content-brand);
+        font: var(--roboto-medium);
+        transform: translatex(8px);
+
+    }
 }
