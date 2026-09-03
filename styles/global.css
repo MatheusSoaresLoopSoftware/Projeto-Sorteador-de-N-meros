@@ -1,7 +1,22 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+
+    @media (width <80em) {
+        box-sizing: border-box;
+    }
+
+    @media (width >=80em) {
+        .visible-mobile {
+            display: none;
+        }
+    }
+
+    @media (width <80em) {
+        .visible-web {
+            display: none;
+        }
+    }
 }
 
 html,

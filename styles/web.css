@@ -1,0 +1,45 @@
+@media (width >=80em) {
+
+    & #logo-number {
+        margin-top: 76px;
+        margin-left: 120px;
+        margin-bottom: 89px;
+    }
+
+
+    & .web-adjust {
+        display: flex;
+        margin-left: 134px;
+        margin-bottom: 153px;
+
+        & .content-web {
+            display: flex;
+            flex-direction: column;
+            gap: 38px;
+
+            & #header-main {
+                margin: 0;
+
+                & #intro-site {
+                    & p {
+                        font: var(--overline);
+                        background: var(--gradient-txt-title);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        color: transparent;
+                        -webkit-text-fill-color: transparent;
+                    }
+
+                    margin-bottom: 0.5rem;
+                }
+
+                & #title {
+                    & h1 {
+                        font: var(--display-medium);
+                        color: var(--content-primary);
+                    }
+                }
+            }
+        }
+    }
+}

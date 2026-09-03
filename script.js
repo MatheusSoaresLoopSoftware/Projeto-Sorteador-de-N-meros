@@ -5,6 +5,7 @@ const max = document.getElementById("max")
 const formArea = document.getElementById("form-area")
 const formSorter = document.getElementById("form-sorter")
 const checkbox = document.getElementById("toggle-style")
+const sorterArea = document.querySelector(".sorter-area")
 
 //--Variables--//
 let fieldVerified
@@ -43,8 +44,25 @@ formArea.onsubmit = (event) => {
     }
 
     const numeros = sorter(qtd.value, min.value, max.value, noRepeat)
-    console.log(numeros) 
-    
+
+    generateSoreter(numeros)
+
+    formArea.classList.add("hidden")
+    formSorter.classList.remove("hidden")
+
+}
+
+formSorter.onsubmit = (event) => {
+    event.preventDefault()
+
+    if (!validFields()) {
+        return
+    }
+
+    // sorterArea.innerHTML = ""
+    const numeros = sorter(qtd.value, min.value, max.value, noRepeat)
+    generateSoreter(numeros)
+
     formArea.classList.add("hidden")
     formSorter.classList.remove("hidden")
 }
@@ -103,8 +121,8 @@ function sorter(qtd, min, max, noRepeatNumber) {
     max = Number(max)
     qtd = Number(qtd)
 
-       if (noRepeatNumber) {
-        return sortearSemRepetir(min, max, qtd)
+    if (noRepeatNumber) {
+        return noRepeatSorter(min, max, qtd)
     }
 
     const result = [];
@@ -112,6 +130,35 @@ function sorter(qtd, min, max, noRepeatNumber) {
         result.push(sorterNumber(min, max));
     }
     return result;
+}
+
+function generateSoreter(numeros) {
+    sorterArea.innerHTML = ""
+    criarProximoNumero(numeros, 0)
+}
+
+function criarProximoNumero(numeros, index) {
+    if (index >= numeros.length) return
+
+    const newNumber = document.createElement("div")
+    newNumber.classList.add("numbers-sorter")
+
+    const background = document.createElement("div")
+    background.classList.add("background-sorter")
+
+    const contentSorter = document.createElement("span")
+    contentSorter.classList.add("result-sorter")
+    contentSorter.textContent = numeros[index]
+
+    newNumber.append(background, contentSorter)
+    sorterArea.append(newNumber)
+
+    background.addEventListener("animationend", function aoTerminar(e) {
+        if (e.animationName === "bg-fade-out") {
+            background.removeEventListener("animationend", aoTerminar)
+            criarProximoNumero(numeros, index + 1)
+        }
+    })
 }
 
 
